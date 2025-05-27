@@ -1,0 +1,125 @@
+# Existing entries (keep these)
+*.iml
+.kotlin
+.gradle
+**/build/
+xcuserdata
+!src/**/build/
+local.properties
+.idea
+.DS_Store
+captures
+.externalNativeBuild
+.cxx
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+# Additional Kotlin Multiplatform entries
+# Kotlin Native cache
+.konan/
+
+# Gradle wrapper (optional - some teams commit this)
+# gradle/wrapper/gradle-wrapper.jar
+# gradle/wrapper/gradle-wrapper.properties
+
+# Android specific
+*.apk
+*.aab
+*.ap_
+*.dex
+/*/out/
+dexedLibs/
+bin/
+gen/
+proguard/
+
+# Firebase (you'll likely add this back later)
+google-services.json
+GoogleService-Info.plist
+
+# Signing files (NEVER commit these)
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+
+# Compose Multiplatform generated files
+**/generated/
+**/generatedByRules/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# macOS specific
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows specific
+*.exe
+*.msi
+
+# JetBrains IDEs
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/shelf
+.idea/modules.xml
+.idea/*.iml
+.idea/modules
+*.iml
+*.ipr
+
+# Visual Studio Code
+.vscode/
+
+# Log files
+*.log
+
+# Unit test / coverage reports
+/coverage/
+*.coverage
+.nyc_output
+
+# Dependency directories
+node_modules/
+
+# iOS specific
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+ios/.symlinks/
+
+# Fastlane
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
+**/fastlane/readme.md
+
