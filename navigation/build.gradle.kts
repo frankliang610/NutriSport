@@ -2,10 +2,9 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
-//    alias(libs.plugins.google.services)
 }
 
 kotlin {
@@ -21,9 +20,8 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "ComposeApp"
+            baseName = "navigation"
             isStatic = true
-//            export(libs.kmp.notifier)
         }
     }
 
@@ -32,7 +30,6 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.splash.screen)
-//            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -44,41 +41,18 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
 
-//            implementation(libs.auth.kmp)
-//            implementation(libs.firebase.app)
-
-//            implementation(libs.koin.compose)
-//
-//            api(libs.kmp.notifier)
-
-            implementation(project(path = ":navigation"))
-            implementation(project(path = ":shared"))
-//            implementation(project(path = ":di"))
-//            implementation(project(path = ":data"))
+            implementation(project(path = ":feature:auth"))
         }
     }
 }
 
 android {
-    namespace = "com.feng.nutrisport"
+    namespace = "com.feng.navigation"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.feng.nutrisport"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 1
-        versionName = "1.0"
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -86,7 +60,8 @@ android {
     }
 }
 
-dependencies {
-    debugImplementation(compose.uiTooling)
+compose.resources {
+    generateResClass = always
 }
+
 
