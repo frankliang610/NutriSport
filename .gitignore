@@ -123,3 +123,17 @@ ios/.symlinks/
 **/fastlane/test_output
 **/fastlane/readme.md
 
+# iOS configuration files
+iosApp/iosApp/Info.plist
+**/Info.plist
+
+# Firebase config files (NEVER commit these)
+google-services.json
+GoogleService-Info.plist
+**/GoogleService-Info.plist
+**/google-services.json
+
+# Constants with secrets
+Constants.kt
+**/Constants.kt
+
